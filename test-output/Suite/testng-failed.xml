@@ -6,13 +6,13 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="tests.SearchResultTest">
+      <class name="tests.FaceBookTest">
         <methods>
           <include name="beforeSuite"/>
           <include name="afterSuite"/>
           <include name="searchResult"/>
         </methods>
-      </class> <!-- tests.SearchResultTest -->
+      </class> <!-- tests.FaceBookTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

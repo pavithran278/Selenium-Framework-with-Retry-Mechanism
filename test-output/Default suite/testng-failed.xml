@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.GoogleHomeTest">
+      <class name="tests.GmailTest">
         <methods>
           <include name="GoogleHome"/>
           <include name="beforeSuite"/>
           <include name="afterSuite"/>
         </methods>
-      </class> <!-- tests.GoogleHomeTest -->
+      </class> <!-- tests.GmailTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
