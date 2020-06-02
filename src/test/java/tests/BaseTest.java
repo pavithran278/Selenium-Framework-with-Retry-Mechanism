@@ -9,6 +9,9 @@ import org.testng.annotations.*;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
+import utils.CaptureScreenshot;
+
+import java.io.IOException;
 
 public class BaseTest {
 	public static WebDriver driver;
@@ -18,7 +21,7 @@ public class BaseTest {
 
 	@BeforeSuite
 	public void beforeSuite() {
-		report = new ExtentReports(System.getProperty("user.dir")+"\\ExtentReportResults.html");
+		report = new ExtentReports(System.getProperty("user.dir")+"\\Report\\ExtentReportResults.html");
 	}
 
 	@BeforeMethod
@@ -32,15 +35,19 @@ public class BaseTest {
 	}
 
 	@AfterMethod
-	public void getResult(ITestResult result) {
+	public void getResult(ITestResult result) throws IOException {
+		String screenshotPath = CaptureScreenshot.getScreenshot(driver,result.getName());
 		if(result.getStatus() == ITestResult.FAILURE) {
 			test.log(LogStatus.FAIL, result.getName()+" Test Failed ");
+			test.log(LogStatus.FAIL, test.addScreenCapture(screenshotPath));
 		}
 		else if(result.getStatus() == ITestResult.SUCCESS) {
 			test.log(LogStatus.PASS, result.getName()+" Test Passed ");
+			test.log(LogStatus.PASS, test.addScreenCapture(screenshotPath));
 		}
 		else {
 			test.log(LogStatus.SKIP, result.getName()+" Test Skipped ");
+//			test.log(LogStatus.SKIP, test.addScreenCapture(screenshotPath));
 		}
 
 		report.endTest(test);
