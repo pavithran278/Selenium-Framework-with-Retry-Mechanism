@@ -9,11 +9,10 @@ import utils.ReadConfig;
 public class FaceBookPage extends BasePage {
 
     private WebDriver driver;
-    private  String url = ReadConfig.getValue("test2");
     @FindBy(linkText="Create a Page")
     WebElement CreateAPage;
 
-    public FaceBookPage(WebDriver driver) {
+    public FaceBookPage(WebDriver driver,String url) {
         super(driver);
         this.driver = driver;
         driver.get(url);

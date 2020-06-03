@@ -15,7 +15,7 @@ import java.io.IOException;
 
 public class BaseTest {
 	public static WebDriver driver;
-	public static String Chrome_Driver_path = "D:\\chromedriver.exe";
+	public static String Chrome_Driver_path = System.getProperty("user.dir")+"\\src\\test\\resources\\chromedriver.exe";
 	public static ExtentTest test;
 	public static ExtentReports report;
 

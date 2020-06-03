@@ -13,11 +13,10 @@ import java.io.FileNotFoundException;
 public class GoogleHomePage extends BasePage {
 
 	private WebDriver driver;
-	private  String url = ReadConfig.getValue("test1");
 	@FindBy(xpath="//input[@name=\"q\"]")
 	WebElement SearchBar;
 
-	public GoogleHomePage(WebDriver driver) {
+	public GoogleHomePage(WebDriver driver,String url) {
 		super(driver);
 		this.driver = driver;
 		driver.get(url);
