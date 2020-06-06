@@ -17,7 +17,7 @@ Note: Chromedriver is in resource path
 
 **Steps**
 
-Go to project path in terminal. For example: C:\Users\User-Name\workspace\project>
+Go to project path in terminal.
 
 - Run ``` mvn clean ```
 - Run ``` mvn test ```
